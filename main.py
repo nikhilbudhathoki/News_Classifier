@@ -17,7 +17,7 @@ def load_model():
         st.info(f"Loading model from Hugging Face: {model_name}")
         tokenizer = AutoTokenizer.from_pretrained(model_name)
         model = AutoModelForSequenceClassification.from_pretrained(model_name)
-        device = 'cuda' if torch.cuda.is_available() else 'cpu'
+        device = 'cpu'
         model.to(device)
         model.eval()
         st.success("Model loaded successfully!")
